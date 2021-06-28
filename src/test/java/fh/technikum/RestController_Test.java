@@ -17,7 +17,7 @@ public class RestController_Test {
     }
 
     @Test
-    public void maintenanceMode(){
+    public void maintenanceMode_Test(){
         //Arrange
         RestController rctest = new RestController();
         String erwarten = rctest.statusMeldung("testobjekt");
