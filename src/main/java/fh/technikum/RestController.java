@@ -28,6 +28,7 @@ public class RestController implements ContainerResponseFilter{
                 "GET, POST, PUT, DELETE, OPTIONS, HEAD");
     }
 
+    //https://www.baeldung.com/jax-rs-response
     @GET
     @Path("/statusMeldung/{value}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -37,6 +38,7 @@ public class RestController implements ContainerResponseFilter{
         return String.format("%s", value);
     }
 
+    //https://www.baeldung.com/jax-rs-response
     @GET
     @Path("/maintenanceMode")
     @Produces(MediaType.TEXT_PLAIN)
@@ -44,7 +46,6 @@ public class RestController implements ContainerResponseFilter{
         System.out.println("maintenanceMode: Status= "+status);
         return Response
                 .status(Response.Status.OK)
-                //https://stackoverflow.com/questions/36570751/no-access-control-allow-origin-header-is-present-on-origin-null-is-ther
                 .entity(this.status)
                 .build();
     }
